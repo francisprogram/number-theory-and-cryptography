@@ -14,32 +14,32 @@ Each algorithm is implemented in Algorithms.java and run/tested in Main.java.
 
 1) The Euclidean Algorithm
 
-The method gcd(a, b), aims to find the greatest common divisor between 2 numbers using The Euclidean Algorithm. The algorithm itself calculates the remainder between each number repeatedly until a remainder of 0 is reached.
+The method ```gcd(a, b)```, aims to find the greatest common divisor between 2 numbers using The Euclidean Algorithm. The algorithm itself calculates the remainder between each number repeatedly until a remainder of 0 is reached.
 
-Algorithms.gcd(105, 42);
+```Algorithms.gcd(105, 42);```
 
 
 2) The Sieve of Eratosthenes
 
-The method sieve(n) calculates all the prime numbers up to and including n, provided n is greater than 1. The algorithm iterates through each uncancelled number squared (k^2) and cancels multiples of that number up to and including n. This leaves only the prime numbers.
+The method ```sieve(n)``` calculates all the prime numbers up to and including n, provided n is greater than 1. The algorithm iterates through each uncancelled number squared (k<sup>2</sup>) and cancels multiples of that number up to and including n. This leaves only the prime numbers.
 
-Algorithms.sieve(20);
+```Algorithms.sieve(20);```
 
 
 3) Modular Exponentiation
 
-The method modExp(base, exponent, modulo) calculates the value of (b^e mod m) where b, e and m can all be very large numbers. The algorithm processes the exponent in its binary form multiplying into a result based on which bits are active.
+The method ```modExp(base, exponent, modulo)``` calculates the value of (b<sup>e</sup> mod m) where b, e and m can all be very large numbers. The algorithm processes the exponent in its binary form multiplying into a result based on which bits are active.
 
-Algorithms.modExp(5000, 2500, 600);
+```Algorithms.modExp(5000, 2500, 600);```
 
 
 4) Diffie-Hellman Key Exchange
 
-The method computeSharedSecret(g, a, p) calculates the value of g^a mod p for use in producing a Diffie-Hellman Key Exchange.
+The method ```computeSharedSecret(g, a, p)``` calculates the value of g<sup>a</sup> mod p for use in producing a Diffie-Hellman Key Exchange.
 
-Imagine 2 parties Alice and Bob attempting to communicate a secret over an unsecure, public channel with intercepting eavesdroppers. Both agree on a public base g and prime p. They then choose their own secret numbers A and B. Each party will calculate g^(secret number) mod p and exchange that value. They will then calculate g^(secret number) mod p with the value they recieved and the result of that calculation will be a secret value they both share, but the eavesdropper does not know and cannot calculate.
+Imagine 2 parties Alice and Bob attempting to communicate a secret over an unsecure, public channel with intercepting eavesdroppers. Both agree on a public base g and prime p. They then choose their own secret numbers A and B. Each party will calculate g<sup>A</sup> mod p and g<sup>B</sup> mod p respectively and exchange that value. They will then calculate g<sup>A</sup> mod p and g<sup>B</sup> mod p respectively with the value they recieved (equivalently (g<sup>A</sup> mod p)<sup>B</sup> mod p and (g<sup>B</sup> mod p)<sup>A</sup> mod p) and the result of that calculation will be a secret value they both share, but the eavesdropper does not know and cannot calculate.
 
-Algorithms computeSharedSecret(6000, 2048, 1700);
+```Algorithms computeSharedSecret(6000, 2048, 1700);```
 
 
 # Requirements
@@ -52,11 +52,11 @@ Clone the repository and navigate to the project directory.
 
 Compile the Java files:
 
-javac Algorithms.java Main.java
+```javac Algorithms.java Main.java```
 
 Then run the program:
 
-java Main
+```java Main```
 
 Depending on the Java version being used, Main.java may require a standard Java public static void main(String[] args) entry point.
 
